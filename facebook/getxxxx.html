@@ -35,10 +35,60 @@
 	<meta property="fb:app_id" content="1004815779627356" />
 
 	<!--<meta http-equiv="refresh" content="0; url=https://apps.apple.com/app/id1122583310?pt=674507&ct=share&mt=8">-->
+	
+	
 	<script type="text/javascript">
 		window.location.replace('https://apps.apple.com/app/id1122583310?pt=674507&ct=share&mt=8');
 		setTimeout("window.close()",1000);
 	</script>
+	
+
+	<!--
+	<script>
+		const urlParams = new URLSearchParams(window.location.search);
+
+		let code = "";
+		let ct = "share"; // valor per defecte
+		if (urlParams.get("ref")) {
+  			code = urlParams.get("ref");
+  			ct = "referral";
+		} else if (urlParams.get("via")) {
+  			code = urlParams.get("via");
+  			ct = code;
+		}
+
+		if (code && code.trim() !== "") {
+			const payload = {
+				ap: 'friends',
+				id: Math.floor(Math.random() * 9000000000) + 1000000000,
+				tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
+				la: navigator.language,
+				re: screen.width + 'x' + screen.height,
+				co: code,
+			};
+			fetch('https://crs.bobgoo.com/click', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(payload)
+			}).then(res => console.log("Tracking OK")).catch(err => console.error("Error tracking:", err));
+		}
+
+		
+		const baseUrl = 'https://apps.apple.com/app/id1122583310';
+		const params = new URLSearchParams({
+  			pt: '674507',
+  			ct: ct,
+  			mt: '8'
+		});
+		window.location.replace(`${baseUrl}?${params.toString()}`);
+		setTimeout(() => { window.close(); }, 1000);
+
+		//setTimeout(() => { window.location.href = `${baseUrl}?${params.toString()}`; }, 1000);
+		
+
+		//setTimeout(() => { window.location.href = 'https://apps.apple.com/app/id1122583310?pt=674507&ct=share&mt=8'; }, 1000);
+  	</script>
+-->
 
 </head>
 <body>
